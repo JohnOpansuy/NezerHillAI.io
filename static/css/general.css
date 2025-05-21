@@ -1,0 +1,1202 @@
+html,
+body,
+main,
+header,
+footer {
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth;
+}
+header {
+    z-index: 10;
+}
+
+h3,
+svg {
+    display: inline;
+}
+li {
+    text-align: left;
+}
+a:hover {
+    cursor: pointer;
+}
+/*select option {
+      padding: 8px;
+      margin-top: 4px;
+      border-radius: 10px;
+}*/
+
+.flash-message {
+    position: fixed; /* Фіксоване розташування над усім */
+    top: 20px; /* Відступ зверху */
+    left: 50%; /* Центрування по горизонталі */
+    transform: translateX(-50%); /* Вирівнювання по центру */
+    z-index: 1100; /* Більший за z-index інших елементів */
+    background-color: #721c24; /* Червоний фон для помилки (можна змінити) */
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid #721c24;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+.flash-message.success {
+    background-color: #0d3d19; /* Зелений фон */
+    color: white;
+    border-color: #155724;
+}
+.flash-message.warning {
+    background-color: #7e7c02; /* Зелений фон */
+    color: white;
+    border-color: #574815;
+}
+.flash-message.error {
+    background-color: #721c24; /* Червоний фон */
+    color: white;
+    border-color: #721c24;
+}
+.flash-message.info {
+    background-color: #0c5460; /* Синій фон */
+    color: white;
+    border-color: #0c5460;
+}
+.toast {
+    border-radius: 8px;
+    border-style: solid;
+    border-width: 3px;
+}
+
+.account-boredr1 {
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: solid 2px;
+}
+.account-boredr2 {
+    margin-top: 5px;
+    border: none;
+    border-top: solid 2px;
+}
+.btn_list:hover {
+    text-decoration: none;
+}
+/* Спочатку приховані */
+/* Загальний стиль для форм */
+.chat-name-form,
+.chat-color-form {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    gap: 10px;
+}
+.thumb-toggle {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.search_border {
+    padding: 10px;
+    border: none;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 10px;
+}
+.container_searched {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+.list_item {
+    width: 97.5%;
+    margin: 0;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.color_searching {
+    display: block;
+    width: 100%;
+    height: 7.5px;
+    border-radius: 100px;
+    background-color: #0c5460;
+}
+
+/* Основний контейнер */
+#create_chat_container,
+.account-container-edit {
+    display: none;
+    width: 50% !important; /* Зменшена ширина для візуальної акуратності */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px; /* Збільшено округлення для сучасного вигляду */
+    padding: 20px; /* Простір усередині контейнера */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь для глибини */
+    z-index: 5002;
+    animation: fadeIn 0.3s ease-in-out; /* Плавна анімація появи */
+}
+.account-container-edit-settings {
+    display: none;
+    width: 75% !important; /* Зменшена ширина для візуальної акуратності */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px; /* Збільшено округлення для сучасного вигляду */
+    padding: 20px; /* Простір усередині контейнера */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь для глибини */
+    z-index: 5002;
+    animation: fadeIn 0.3s ease-in-out; /* Плавна анімація появи */
+}
+.settings_container_main {
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 20px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+.settings_container0 {
+    width: 100%;
+    border-radius: 15px; /* Збільшено округлення для сучасного вигляду */
+    padding: 20px; /* Простір усередині контейнера */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь для глибини */
+}
+.settings_container1 {
+    border-radius: 15px; /* Збільшено округлення для сучасного вигляду */
+    padding: 5px; /* Простір усередині контейнера */
+    margin: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь для глибини */
+}
+.settings_container1-1 {
+    border-radius: 15px; /* Збільшено округлення для сучасного вигляду */
+    padding: 20px; /* Простір усередині контейнера */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Додаємо тінь для глибини */
+}
+.mig-container {
+    display: block;
+    width: 50%;
+}
+.settings_container2 {
+    height: 100%;
+}
+.settings_container3 {
+    width: 75%;
+}
+
+/* Анімація плавного з'явлення */
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -60%);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+}
+/* Анімація overlay */
+@keyframes overlayFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+/* Кнопка закриття */
+#cancelButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px; /* Збільшено розмір для зручності */
+    cursor: pointer;
+    color: #888; /* Світлий колір тексту */
+    transition: color 0.2s ease-in-out; /* Ефект при наведенні */
+}
+#cancelButton:hover {
+    color: #000; /* Зміна кольору при наведенні */
+}
+.chat-color {
+    width: 40px; /* Збільшуємо ширину */
+    height: 40px; /* Збільшуємо висоту */
+    border: none; /* Прибираємо рамку */
+    padding: 0;
+    /* Додатково, щоб прибрати стандартний вигляд, який може впливати */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+/* Для Chrome та інших Webkit-браузерів */
+.chat-color::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+.chat-color::-webkit-color-swatch {
+    border: none;
+}
+.created_chat_name {
+    margin: 0;
+}
+/* Поле для введення */
+.NameForChad,
+.chat-color {
+    width: 100%; /* Поля займають всю ширину контейнера */
+    padding: 10px !important;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box; /* Врахування padding у загальну ширину */
+}
+/* Кнопка створення чату */
+.btn-name-create {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-align: center;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1); /* Легкий ефект тіні */
+    transition: background-color 0.2s ease-in-out, transform 0.2s ease;
+}
+.btn-name-create:hover {
+    transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 5001;
+}
+.overlay_1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.overlay_2 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 0 !important;
+}
+.overlay_3 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000 !important;
+}
+
+/*
+.send_container_main {
+      width: 100%;
+}
+.send_container {
+      display: flex;
+      bottom: 0;
+      right: 34px; 
+      width: 75%; 
+      min-height: 60px;
+      padding: 10px; 
+      align-items: center;
+      gap: 10px; 
+      border-top-right-radius: 10px; 
+      border-top-left-radius: 10px; 
+      box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); 
+      z-index: 1000; 
+}
+.send_input {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      resize: none;
+}
+*/
+.send_container_main {
+    width: 100%;
+}
+/* Фіксуємо контейнер у нижній частині вікна */
+.send_container {
+    position: fixed; /* Фіксоване позиціонування */
+    bottom: 0; /* Нижній край завжди на місці */
+    left: 60%; /* Центрування по горизонталі */
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: flex-end; /* Вирівнюємо елементи за нижньою межею */
+    justify-content: space-between;
+
+    width: 75%;
+    min-height: 60px; /* Мінімальна висота */
+    padding: 10px;
+    gap: 15px;
+
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    background-color: #fff; /* Задній фон (якщо потрібно) */
+}
+
+/* Текстове поле займає залишок простору; розміщене у нормальному потоці */
+.send_input {
+    width: 100%;
+    min-height: 35px; /* Початкова висота */
+    max-height: 120px; /* Максимальна висота (≈ 5 рядків) */
+    line-height: 1.5;
+    padding: 5px;
+    border-radius: 10px;
+    resize: none; /* Забороняємо зміну розміру вручну */
+    overflow-y: hidden; /* Спочатку приховуємо вертикальний скрол */
+    box-sizing: border-box;
+}
+.slidebare_1 {
+    margin-left: 5%;
+    margin-top: 1%;
+}
+#icon-show,
+#icon-hide {
+    display: none;
+}
+
+.search_input_container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 5px;
+}
+.search_input {
+    width: 80%;
+    margin: 0 !important;
+    border: none;
+    border-width: 2px !important;
+    border-left: solid;
+    border-right: solid;
+    border-radius: 0 !important;
+    z-index: 1004;
+}
+.search_left {
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+.search_right {
+    margin: 0;
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.form_name,
+select,
+option {
+    width: 100%;
+}
+/* Textarea, що автоматично розширюється */
+/* Кнопка відправлення */
+.send-btn {
+    display: flex;
+    margin: auto;
+    align-items: center !important;
+    justify-content: center;
+    padding: 8px;
+    border-radius: 50%;
+    text-decoration: none;
+}
+.send-btn svg {
+    display: block; /* Забезпечує коректне відображення SVG */
+}
+.setting_btn {
+    width: 100%;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.from-who {
+    display: flex !important;
+    align-items: flex-end; /* Вирівнюємо текст вниз */
+    justify-content: center; /* Вирівнюємо по центру */
+    margin: 4px;
+}
+.created_chad_container {
+    display: inline-block;
+    height: 75px;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.created_chad_top {
+    display: flex;
+    justify-content: space-between;
+}
+.created_chad_bottom {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border: none;
+    border-top: solid;
+    border-width: 2px;
+}
+.created_chad_color {
+    width: 40px;
+    height: 10px;
+    margin-top: 10px;
+    border-radius: 3px;
+}
+.created_chad_textos {
+    text-decoration: none !important;
+}
+.created_chad_name {
+    display: inline;
+}
+.created_chad_some {
+    display: inline;
+    margin-top: 15px;
+    font-size: 10px;
+    color: gray !important;
+}
+.little_text {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+/* Загальний стиль для повідомлень */
+.messages {
+    display: flex;
+    width: 100%; /* Робимо блок на всю ширину */
+}
+/* Стиль для повідомлень користувача */
+.user-send-container {
+    display: flex;
+    justify-content: end; /* Вирівнюємо праворуч */
+    margin-top: 10px;
+}
+.user-send {
+    padding: 10px 15px;
+    border-radius: 15px;
+    min-width: 5%; /* Обмежуємо ширину блоку */
+    max-width: 90%; /* Обмежуємо ширину блоку */
+    text-align: left; /* Текст вирівнюється праворуч */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-wrap: break-word;
+    /* Для сумісності зі старими браузерами можна ще додати: */
+    word-wrap: break-word;
+}
+/* Стиль для повідомлень ШІ */
+.ai-send-container {
+    display: flex;
+    justify-content: left; /* Вирівнюємо ліворуч */
+    margin-top: 15px;
+}
+.ai-send {
+    padding: 10px 15px;
+    border-radius: 15px;
+    min-width: 5%; /* Обмежуємо ширину блоку */
+    max-width: 90%; /* Обмежуємо ширину блоку */
+    text-align: left; /* Текст вирівнюється ліворуч */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    overflow-wrap: break-word;
+    /* Для сумісності зі старими браузерами можна ще додати: */
+    word-wrap: break-word;
+}
+.ai-send-thincking {
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+.ai-send-tools {
+    display: inline-block;
+    min-width: 40px !important;
+    min-height: 40px !important;
+    padding: 10px;
+    margin-top: 8px;
+    margin-left: 25.5px;
+    margin-bottom: 22.5px;
+    border-radius: 20px;
+}
+.slidebare_2 {
+    position: absolute;
+    right: 17.5px; /* Розташування по горизонталі */
+    top: calc(40vh); /* Розташування по вертикалі */
+    transform: translateX(-50%); /* Центрування відносно точки left */
+}
+
+.chat_container {
+    z-index: -100000 !important;
+}
+.btn-create-chat {
+    display: inline; /* Центрування елемента */
+    padding-left: 0.5px;
+    margin: 0;
+    justify-content: center; /* Вирівнювання горизонтально */
+    align-items: center; /* Вирівнювання вертикально */
+    background-color: transparent; /* Без фону кнопки */
+    cursor: pointer; /* Інтерактивний ефект курсора */
+    width: 25.5px;
+    border: 1.75px solid #fff; /* Рамка квадрата */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Легкий тіньовий ефект */
+}
+
+.selected_chad_1 {
+    border: solid;
+    border-width: 2px;
+}
+/* .selected_chad_2 {
+      padding-left: 2px;
+      border: none;
+      border-left: solid;
+      border-width: 4px; 
+}
+*/
+.container_1 {
+    position: fixed; /* Закріплює панель зліва */
+    left: 0;
+    width: 250px; /* Ширина бокової панелі */
+    height: 100vh; /* Займає всю висоту вікна */
+    padding: 15px; /* Внутрішній відступ для вмісту */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Легкий тіньовий ефект */
+    animation: slideInLeft 1s ease-in-out;
+}
+.container_1_2 {
+    position: fixed; /* Закріплює панель зліва */
+    top: 0;
+    left: 0;
+    width: 250px; /* Ширина бокової панелі */
+    height: 100vh; /* Займає всю висоту вікна */
+    padding: 15px; /* Внутрішній відступ для вмісту */
+    box-shadow: 4px 0 8px rgba(0, 0, 0, 0.1); /* Легкий тіньовий ефект */
+    animation: slideInLeft 1s ease-in-out;
+}
+.container_2 {
+    position: fixed; /* Закріплює панель зліва */
+    right: 0;
+    width: 80%; /* Ширина бокової панелі */
+    height: 100%; /* Займає всю висоту вікна */
+    z-index: -1000;
+}
+.container_3 {
+    margin-top: 75px; /* Відступ зверху */
+    margin-right: 50px;
+    margin-bottom: 50px;
+    margin-left: 50px; /* Для інших сторін */
+    padding: 20px;
+    border-radius: 20px;
+    border: solid;
+    border-width: 4px;
+    border-color: black;
+    height: calc(60vh); /* Динамічна висота */
+    display: flex;
+    justify-content: space-between;
+}
+.container_4 {
+    padding: 40px;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(30vh); /* Динамічна висота */
+    display: flex;
+    justify-content: space-between;
+}
+.container_4-2 {
+    position: absolute; /* Встановлює елемент за межами нормального потоку */
+    top: 30%; /* Центрування по вертикалі */
+    left: 30%; /* Центрування по горизонталі */
+    transform: translate (-30%, -30%); /* Зміщує елемент назад на половину його ширини та висоти */
+}
+.container_5 {
+    padding: 40px;
+    border: solid;
+    border-width: 4px;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(50vh); /* Динамічна висота */
+}
+.container_5-2 {
+    text-align: center;
+    margin-top: 20px;
+    border-top: solid;
+}
+.text_1 {
+    display: flex;
+    padding-bottom: 10px;
+    border-bottom: solid;
+    justify-content: space-between;
+}
+.text_1 > a {
+    margin: 0;
+    margin-left: 2px;
+    align-items: left;
+}
+.text_3 {
+    display: flex;
+    padding-top: 10px !important;
+    border-top: solid;
+    justify-content: space-between;
+    bottom: 0;
+}
+.text_3-3 {
+    text-align: right;
+}
+.text_4-1 {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    border-right: solid;
+}
+.text_4-2 {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+}
+.text_p_sing {
+    text-align: left;
+}
+
+.form-control {
+    width: 75%;
+}
+
+.btn {
+    margin-top: 10px;
+}
+/* .btn_center {
+      display: flex;
+      justify-content: center;
+} */
+
+.burger {
+    margin-left: 0.5rem !important;
+}
+.drop3,
+.drop4 {
+    position: relative;
+    display: inline-block;
+}
+.drop2 {
+    margin: auto;
+}
+.baton1,
+.baton2,
+.baton3,
+.baton4 {
+    z-index: 1000;
+}
+.baton3 {
+    display: none; /* Ховаємо меню за замовчуванням */
+    position: absolute;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: black;
+    padding: 10px;
+    margin-top: 0.01rem;
+    right: -0.5rem !important;
+}
+.baton4 {
+    display: none; /* Ховаємо меню за замовчуванням */
+    position: absolute;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: black;
+    padding: 10px;
+    margin-top: 0.01rem;
+    right: 0.1rem !important;
+}
+.baton3 a {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+.baton3 a:hover {
+    text-decoration: underline;
+}
+.drop3:hover .baton3 {
+    display: block;
+}
+.baton4 a:hover {
+    text-decoration: underline;
+}
+.drop4:hover .baton4 {
+    display: block;
+}
+.baton4 a {
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+.baton1 {
+    display: none;
+}
+/*Account*/
+@media (max-width: 800px) {
+    .profile-info {
+      text-align: center !important;
+    }
+    .home_btn,
+    .acount_btn,
+    .drop4 {
+      display: none;
+    }
+    .baton1 {
+      display: block;
+    }
+    .container_2 {
+      width: 56.5%;
+    }
+
+    .send_input {
+      width: 85%;
+    }
+}
+/*Cторінка головна*/
+/* 📱 Мобільні пристрої (до 576px) */
+@media (max-width: 576px) {
+    .container_1 {
+      display: none;
+      top: 0;
+    }
+    .send_container {
+      width: 75% !important;
+    }
+}
+
+/* 📟 Планшети (від 577px до 768px) */
+@media (max-width: 768px) {
+    .container_1 {
+      display: none;
+      top: 0;
+    }
+    .menu {
+      flex-direction: column; /* Вертикальне меню */
+    }
+    .content {
+      width: 100%;
+    }
+    .slidebare_1 {
+      margin-left: 2.5%;
+    }
+}
+/* 🖥️ Невеликі ноутбуки (від 769px до 992px) */
+@media (max-width: 992px) {
+    .container_1 {
+      display: none;
+      top: 0;
+    }
+    .account-container-edit {
+      width: 75% !important; /* Зменшена ширина для візуальної акуратності */
+    }
+    .account-container-edit-settings {
+      width: 50%;
+    }
+    .sidebar {
+      display: none; /* Сховати бокову панель */
+    }
+}
+/* 🖥️ Великі екрани (від 993px до 1200px) */
+@media (max-width: 1200px) {
+    .container_1 {
+      display: none;
+      top: 0;
+    }
+    .container_2 {
+      width: 100% !important;
+    }
+    .send_container {
+      left: 55%;
+      width: 85%;
+    }
+    #icon-show {
+      display: inline-block;
+    }
+    .scrollable-container1 {
+      height: calc(100vh - 152.5px) !important;
+    }
+}
+/* 🏔️ Дуже великі дисплеї (1201px і більше) */
+/* @media (min-width: 1201px) {
+      #container_1 {
+            opacity: 1 !important;
+            transform: translateX(0) !important;
+      }
+} */
+.navbar_1 {
+    height: 4rem;
+    padding: 8px;
+    display: flex; /* Встановлюємо flex-контейнер */
+    gap: 15px;
+    align-items: center; /* Вирівнюємо елементи по вертикалі */
+    justify-content: space-between; /* Розділяємо заголовок і кнопки */
+}
+/*.navbar_1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4rem;
+      padding: 8px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+}
+*/
+.navbar_2 {
+    display: flex; /* Встановлюємо flex-контейнер */
+    justify-content: flex-end; /* Вирівнюємо кнопки вправо */
+}
+
+/* Стилізація скролбара */
+::-webkit-scrollbar {
+    width: 8px; /* Ширина вертикального скролбара */
+}
+.scrollable-container1 {
+    height: calc(100vh - 220px);
+    min-height: 75px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+.scrollable-container1_2 {
+    height: calc(100vh - 157.5px);
+    min-height: 75px;
+    padding-right: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    overflow-y: auto;
+}
+.scrollable-container2 {
+    min-height: 100px;
+    height: 240px; /* Висота контейнера */
+    width: 98%;
+    margin-bottom: 20px;
+    padding-right: 10px;
+    overflow-y: auto; /* Додає вертикальний скролбар */
+}
+.scrollable-container3 {
+    height: calc(100vh - 135px);
+    max-height: 90vh; /* Максимальна висота контейнера */
+    min-height: calc(100vh - 90vh); /* Мінімальна висота контейнера */
+    padding-left: 10px;
+    padding-right: 20px;
+    overflow-y: auto; /* Додає вертикальний скролбар */
+    scroll-behavior: smooth;
+}
+.scrollable-container4 {
+    min-height: 150px;
+    height: 200px;
+    overflow-y: auto;
+}
+/* Верхня тінь 
+.chat_container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20px; 
+      pointer-events: none;
+      background: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), transparent);
+}
+/* Нижня тінь 
+.chat_container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50%;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+      z-index: -10000;
+}*/
+/* Фон області прокручування */
+.scrollable-container1::-webkit-scrollbar,
+.scrollable-container2::-webkit-scrollbar,
+.scrollable-container3::-webkit-scrollbar,
+.scrollable-container4::-webkit-scrollbar {
+    width: 5px; /* Ширина скролбара для браузерів з підтримкою WebKit */
+}
+/* From Uiverse.io by JkHuger */
+@keyframes loader_5191 {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+}
+.loader {
+    position: relative; /* Встановлюємо як позиціонований контейнер */
+    /* Можна задати розміри або padding, якщо потрібно */
+}
+/* Якщо потрібно, можна зберегти ваш код для .square, або відкоригувати */
+.square {
+    background: #ddd;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: -8px; /* Тепер це означатиме "верхній лівий кут .loader" */
+    left: 30px;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+#sq1 {
+    margin-top: -25px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 0s infinite alternate;
+}
+#sq2 {
+    margin-top: -25px;
+    animation: loader_5191 675ms ease-in-out 75ms infinite alternate;
+}
+#sq3 {
+    margin-top: -25px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 150ms infinite;
+}
+#sq4 {
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 225ms infinite;
+}
+#sq5 {
+    animation: loader_5191 675ms ease-in-out 300ms infinite;
+}
+#sq6 {
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 375ms infinite;
+}
+#sq7 {
+    margin-top: 15px;
+    margin-left: -25px;
+    animation: loader_5191 675ms ease-in-out 450ms infinite;
+}
+#sq8 {
+    margin-top: 15px;
+    animation: loader_5191 675ms ease-in-out 525ms infinite;
+}
+#sq9 {
+    margin-top: 15px;
+    margin-left: 15px;
+    animation: loader_5191 675ms ease-in-out 600ms infinite;
+}
+/* From Uiverse.io by AbanoubMagdy1 */
+.wave-group {
+    position: relative;
+}
+.wave-group .input {
+    font-size: 16px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 200px;
+    border: none;
+    border-bottom: 1px solid #515151;
+    background: transparent;
+}
+.wave-group .input:focus {
+    outline: none;
+}
+.wave-group .label {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    display: flex;
+}
+.wave-group .label-char {
+    transition: 0.2s ease all;
+    transition-delay: calc(var(--index) * 0.05s);
+}
+.wave-group .input:focus ~ label .label-char,
+.wave-group .input:valid ~ label .label-char {
+    transform: translateY(-20px);
+    font-size: 14px;
+    color: #5264ae;
+}
+.wave-group .bar {
+    position: relative;
+    display: block;
+    width: 200px;
+}
+.wave-group .bar:before,
+.wave-group .bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #5264ae;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+.wave-group .bar:before {
+    left: 50%;
+}
+.wave-group .bar:after {
+    right: 50%;
+}
+.wave-group .input:focus ~ .bar:before,
+.wave-group .input:focus ~ .bar:after {
+    width: 50%;
+}
+/* From Uiverse.io by Galahhad */
+/* tooltip settings 👇 */
+
+.copy {
+    /* button */
+    --button-bg: #353434;
+    --button-hover-bg: #464646;
+    --button-text-color: #cccccc;
+    --button-hover-text-color: #8bb9fe;
+    --button-border-radius: 10px;
+    --button-diameter: 36px;
+    --button-outline-width: 1px;
+    --button-outline-color: rgb(141, 141, 141);
+    /* tooltip */
+    --tooltip-bg: #f4f3f3;
+    --toolptip-border-radius: 4px;
+    --tooltip-font-family: Menlo, Roboto Mono, monospace;
+    /* 👆 this field should not be empty */
+    --tooltip-font-size: 12px;
+    /* 👆 this field should not be empty */
+    --tootip-text-color: rgb(50, 50, 50);
+    --tooltip-padding-x: 7px;
+    --tooltip-padding-y: 7px;
+    --tooltip-offset: 8px;
+    /* --tooltip-transition-duration: 0.3s; */
+    /* 👆 if you need a transition, 
+    just remove the comment,
+    but I didn't like the transition :| */
+}
+
+.copy {
+    box-sizing: border-box;
+    width: var(--button-diameter);
+    height: var(--button-diameter);
+    border-radius: var(--button-border-radius);
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    outline: none;
+}
+
+.tooltip {
+    position: absolute;
+    opacity: 0;
+    visibility: 0;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font: var(--tooltip-font-size) var(--tooltip-font-family);
+    color: var(--tootip-text-color);
+    background: var(--tooltip-bg);
+    padding: var(--tooltip-padding-y) var(--tooltip-padding-x);
+    border-radius: var(--toolptip-border-radius);
+    pointer-events: none;
+    transition: all var(--tooltip-transition-duration)
+      cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.tooltip::before {
+    content: attr(data-text-initial);
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: calc(var(--tooltip-padding-y) / 2 * -1);
+    width: var(--tooltip-padding-y);
+    height: var(--tooltip-padding-y);
+    background: inherit;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    z-index: -999;
+    pointer-events: none;
+}
+
+.copy svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.checkmark {
+    display: none;
+}
+
+/* actions */
+
+.copy:hover .tooltip,
+.copy:focus:not(:focus-visible) .tooltip {
+    opacity: 1;
+    visibility: visible;
+    top: calc((100% + var(--tooltip-offset)) * -1);
+}
+
+.copy:focus:not(:focus-visible) .tooltip::before {
+    content: attr(data-text-end);
+}
+
+.copy:focus:not(:focus-visible) .clipboard {
+    display: none;
+}
+
+.copy:focus:not(:focus-visible) .checkmark {
+    display: block;
+}
+
+.copy:hover,
+.copy:focus {
+    background-color: var(--button-hover-bg);
+}
+
+.copy:active {
+    outline: var(--button-outline-width) solid var(--button-outline-color);
+}
+
+.copy:hover svg {
+    color: var(--button-hover-text-color);
+}
+/* <button class="copy">
+                <span data-text-end="Copied!" data-text-initial="Copy to clipboard" class="tooltip"></span>
+                                <span>
+                                    <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 6.35 6.35" y="0" x="0" height="20" width="20" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="clipboard">
+                                    <g>
+                                        <path fill="currentColor" d="M2.43.265c-.3 0-.548.236-.573.53h-.328a.74.74 0 0 0-.735.734v3.822a.74.74 0 0 0 .735.734H4.82a.74.74 0 0 0 .735-.734V1.529a.74.74 0 0 0-.735-.735h-.328a.58.58 0 0 0-.573-.53zm0 .529h1.49c.032 0 .049.017.049.049v.431c0 .032-.017.049-.049.049H2.43c-.032 0-.05-.017-.05-.049V.843c0-.032.018-.05.05-.05zm-.901.53h.328c.026.292.274.528.573.528h1.49a.58.58 0 0 0 .573-.529h.328a.2.2 0 0 1 .206.206v3.822a.2.2 0 0 1-.206.205H1.53a.2.2 0 0 1-.206-.205V1.529a.2.2 0 0 1 .206-.206z"></path>
+                                    </g>
+                                    </svg>
+                                    <svg xml:space="preserve" style="enable-background:new 0 0 512 512" viewBox="0 0 24 24" y="0" x="0" height="18" width="18" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" xmlns="http://www.w3.org/2000/svg" class="checkmark">
+                                    <g>
+                                        <path data-original="#000000" fill="currentColor" d="M9.707 19.121a.997.997 0 0 1-1.414 0l-5.646-5.647a1.5 1.5 0 0 1 0-2.121l.707-.707a1.5 1.5 0 0 1 2.121 0L9 14.171l9.525-9.525a1.5 1.5 0 0 1 2.121 0l.707.707a1.5 1.5 0 0 1 0 2.121z"></path>
+                                    </g>
+                                    </svg>
+                                </span>
+                                </button> */

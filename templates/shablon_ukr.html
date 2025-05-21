@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Bundle JS (включає Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ url_for ("static", filename="css/general.css") }}">
+    {% if user_theme == "Clasical" %}
+        <link rel="stylesheet" href="{{ url_for ("static", filename="css/classical.css") }}">
+    {% elif user_theme == "Dark" %}
+        <link rel="stylesheet" href="{{ url_for ("static", filename="css/dark.css") }}">
+    {% elif user_theme == "White" %}
+        <link rel="stylesheet" href="{{ url_for ("static", filename="css/white.css") }}">
+    {% else %}
+        <link rel="stylesheet" href="{{ url_for ("static", filename="css/classical.css") }}">
+    {% endif %}
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for ('static', filename='favicon_io/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for ('static', filename='favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for ('static', filename='favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url_for ('static', filename='favicon_io/site.webmanifest') }}">
+
+    <script src="/static/js/main.js"></script> <!-- Підключення зовнішнього файлу -->
+
+    <title>{% block title %}NZ ШІ Орг{% endblock %}</title>
+
+    <!-- viewBox="x y width height" -->
+    <!-- font-size: {{ user_font_size|string }}px; -->
+</head>
+<style>
+    html {
+        font-family: {{ user_font }};
+        font-size: {{ user_font_size|string }}px !important;
+    }
+</style>
+<body>
+    <header>
+        <div class = "navbar_1">
+            <h3>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-sign-railroad" viewBox="0 0 16 16">
+                    <path d="M11.303 6.584h1.064c.592 0 .936.334.936.844a.79.79 0 0 1-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521zm.521.414v.861h.46c.292 0 .474-.14.474-.421 0-.286-.188-.44-.467-.44zm-8.771-.414h1.064c.592 0 .936.334.936.844 0 .39-.242.654-.485.748l.536 1.074h-.59l-.467-.994h-.473v.994h-.521zm.521.414v.861h.46c.292 0 .474-.14.474-.421 0-.286-.188-.44-.467-.44z"/>
+                    <path d="M6.95.435c.58-.58 1.52-.58 2.1 0l6.515 6.516c.58.58.58 1.519 0 2.098L9.05 15.565c-.58.58-1.519.58-2.098 0L.435 9.05a1.48 1.48 0 0 1 0-2.098zm1.4.7a.495.495 0 0 0-.7 0L4.923 3.861 8 6.939l3.078-3.077L8.35 1.134Zm3.788 3.788L9.061 8l3.077 3.078 2.728-2.728a.495.495 0 0 0 0-.7zm-1.06 7.215L8 9.061l-3.077 3.077 2.727 2.728a.495.495 0 0 0 .7 0zm-7.216-1.06L6.939 8 3.862 4.923 1.134 7.65a.495.495 0 0 0 0 .7z"/>
+              </svg>
+              Nezer Hill ШІ
+            </h3>
+            <div class = "navbar_2">
+                <div class = "drop2">
+                    <div class = "baton2">
+                        <a class = "home_btn" href = "/">Домашня</a>
+                        <div class="drop3">
+                            <a href="#" class="dropdown-btn">Вибрати ШІ</a>
+                            <div class="baton3">
+                                <form>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="radio" name="ai_version" value="classic"
+                                               {% if selected_option == "Classic" %}checked{% endif %}> Класичний <!-- 0.1 -->
+                                    </label>
+                                    <br>
+                                    <label style="display: flex; align-items: center; gap: 10px;">
+                                        <input type="radio" name="ai_version" value="pro"
+                                               {% if selected_option == "Pro" %}checked{% endif %}> Про ШІ
+                                    </label>
+                                </form>
+                            </div>
+                        </div>
+                        <div class = "drop4">
+                            <svg xmlns="http://www.w3.org/2000/svg" style = "margin-left: 0.5rem;" width="24" height="24" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 17 17">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/> <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                            </svg>
+                            <div class= "baton4">
+                                <div class = "account-boredr1"> 
+                                    <a class="secret-link" href = "/acount">Акаунт</a>
+                                </div>
+                                <a href = "/about">Про нас</a>
+                                <a href = "/privacy">Приватність та конфіденційність</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="drop1">
+                    <button type="button" class="btn btn-secondary burger" onclick="toggleMenu()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                        </svg>
+                    </button>
+                    <div class = "baton1">
+                        <a href = "/">Домашня</a>
+                        <a href = "/about">Про нас</a>
+                        <a href = "/privacy">Приватність та конфіденційність</a>
+                        <div class = "account-boredr2"> 
+                            <a href = "/acount">Акаунт</a>
+                        </div>
+                        <a class = "btn_list" href = "#" style = "display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-list" viewBox="0 0 17 17">
+                                <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Flash повідомлення -->
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    <div class="toast-container position-fixed bottom-0 end-0 p-3" >
+      {% for category, message in messages %}
+        <div id="toast-{{ loop.index }}" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="5000">
+        <div class="toast-header
+                   {% if category == 'success' %}
+                     bg-success text-white
+                   {% elif category == 'error' %}
+                     bg-danger text-white
+                   {% elif category == 'warning' %}
+                     bg-warning text-dark
+                   {% else %}
+                     bg-info text-white
+                   {% endif %}">
+            <strong class="me-auto">{{ category|capitalize }}</strong>
+            <small>зараз</small>
+            <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+          </div>
+          <div class="toast-body">
+            {{ message }}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endwith %}
+<script>
+  // Знаходимо всі toast елементи на сторінці
+  document.addEventListener("DOMContentLoaded", function() {
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'));
+    toastElList.forEach(function(toastEl) {
+      var toast = new bootstrap.Toast(toastEl);
+      toast.show();
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,718 @@
+/* html, body, main {
+    color: white !important;
+    background-image: url('/static/images/2.jpg');
+    background-size: bottom
+    background-repeat: no-repeat;
+} */
+/*# (#66121F #3B0303 #661212) 7D0000 ; color: #cc0000; color: #990000;*/
+/* Base styles */
+:root {
+    --primary-color: #990000 !important;
+    --text-color: white !important;
+    --red: #3B0303 !important;
+    --bg-light: #661212 !important;
+    --bg-dark: #4b0b0b !important;
+    --dark: black !important;
+    --shadow: 0 1px 3px 0 rgba(238, 237, 237, 0.1) !important;
+}
+:root {
+    --primary-color: #444444 !important;
+    --text-color: white !important;
+    --red: #222222 !important;
+    --bg-light: #242424 !important;
+    --bg-dark: black !important;
+    --dark: #a8a8a8 !important;
+    --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1) !important;
+}
+html, body, main {
+    color: var(--text-color);
+    background: radial-gradient(circle at 90% 50%, var(--primary-color), var(--red));
+}
+/*
+html, body, main {
+    color: var(--text-color);
+    background: radial-gradient(circle at 90% 50%, var(--primary-color), var(--red));
+}
+
+html, body, main {
+    color: var(--text-color);
+    background: radial-gradient(circle at center, var(--primary-color), var(--red));
+}
+
+html, body, main {
+    color: var(--text-color);
+    background: radial-gradient(circle at center, var(--primary-color), var(--red));
+} */
+a, p, h1, h2, h3, svg, input {
+    color: var(--text-color) !important;
+}
+a, .burger {
+    margin: auto;
+}
+input, select, option {
+    margin-top: 5px !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+}
+select:hover {
+    background-color: var(--bg-light);
+}
+input[type="number"] {
+    width: 100%;
+}
+input[type="radio"] {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--text-color);
+    outline: none;
+    cursor: pointer;
+}
+input[type="radio"]:checked {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+input, input::after, input::before, input:focus, textarea, textarea::after, textarea::before, textarea:focus, .form-control:focus, .user-send, .ai-send, .ai-send-tools, select, option, input[type="number"]::-webkit-inner-spin-button, .search_style, .list_item:hover {
+    background-color: var(--bg-light) !important; 
+}
+
+.text_1, .text_3, .text_4-1, .container_4, .container_5, .container_5-2, .account-boredr1, .account-boredr2, .created_chad_bottom, .search_input, .search_border, .selected_chad_1, .selected_chad_2 {
+    border-color: var(--dark);
+}
+.container_1, .container_3, .container_4, .container_5, .container_1_2, .send_container {
+    background-color: var(--red);
+} 
+.btn_account {
+    border-radius: 50%;
+    background-color: var(--red);
+}
+.btn_list {
+    border-radius: 5px;
+    background-color: var(--red);
+}
+.send-btn, .created_chad_container, .settings_container0, .settings_container1,.settings_container1-1, .setting_btn, .toast-body, .search_input_container {
+    background-color: var(--primary-color);
+}
+
+.send_input {
+    border: 1px solid #ccc;
+}
+.list_item:hover {
+    border: solid;
+    border-width: 1.5px;
+    border-color: var(--dark);
+}
+
+.toast {
+    border-color: darkgray;
+}
+.navbar_1, .form-control {
+    border-color: var(--bg-light);
+    background-color: var(--bg-light);
+    border-bottom: 2px solid var(--dark);
+}
+/* .navbar_1 {
+    background-color: rgba(104, 18, 18, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 2px solid var(--dark);
+} */
+.burger {
+    display: none;
+    padding-bottom: 8px;
+    color: var(--text-color);
+    background-color: var(--bg-light);
+}
+.burger:hover {
+    background-color: var(--bg-light);
+}
+.baton3, .baton4, .account-container-edit, .account-container-edit-settings {
+    background-color: var(--red);
+}
+/* Кнопка "Cancel" у формі */
+#cancelButton {
+    color: #333;
+    font-size: 20px;
+    border-style: none;
+}
+/* Ефект при наведенні: хрестик червоніє */
+#cancelButton:hover {
+    color: #ff4d4d !important;
+}
+@media (max-width: 800px) {
+    .baton1 {
+        display: none;
+    }
+    .burger {
+        display: block;
+    }
+    .drop1:hover .baton1 {
+        margin-top: 2px;
+        padding: 8px;
+        text-align: center;
+        background-color: var(--red);
+        width: 105px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--dark);
+        right: 5px;
+        position: absolute;
+        border-radius: 4px; 
+    }
+}
+
+/* Колір фону скролбара */
+::-webkit-scrollbar-track {
+    background: var(--bg-light); /* Темний фон */
+}
+/* Сам повзунок (скроллер) */
+::-webkit-scrollbar-thumb {
+    background: var(--dark); /* Синій колір */
+    border-radius: 10px;
+}
+/* Ефект при наведенні */
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark);
+}
+/* Стиль області позаду повзунка (трек) */
+.scrollable-container1::-webkit-scrollbar-track {
+    background: var(--bg-light); /* Змінюємо фон треку на білий */
+    border-radius: 4px; /* Закруглення країв треку (опціонально) */
+}
+.scrollable-container1::-webkit-scrollbar-thumb {
+    background: var(--dark); /* Колір "повзунка" */
+    border-radius: 4px; /* Закруглення */
+}
+.scrollable-container2::-webkit-scrollbar-track {
+    background: var(--bg-light); /* Колір "повзунка" */
+    border-radius: 4px; /* Закруглення */
+}
+.scrollable-container2::-webkit-scrollbar-thumb {
+    background: var(--dark); /* Змінюємо фон треку на білий */
+    border-radius: 4px; /* Закруглення країв треку (опціонально) */
+}
+/* Стиль "повзунка" */
+.scrollable-container3::-webkit-scrollbar-thumb {
+    background: var(--dark); /* Колір "повзунка" */
+    border-radius: 4px; /* Закруглення */
+}
+.scrollable-container3::-webkit-scrollbar {
+    background: var(--bg-light); /* Колір "повзунка" */
+    border-radius: 4px; /* Закруглення */
+}
+.activa {
+    background-color: #7D0000!important;
+}
+.list-group-item {
+    background-color: var(--bg-light);
+}
+/* Стиль "повзунка" при наведенні
+.scrollable-container::-webkit-scrollbar-thumb:hover {
+    background: rgb(20, 20, 20);
+} */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+/* Typography */
+h1, h2, h3, h4 {
+    font-weight: 700;
+    line-height: 1.2;
+}
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+/* Hero Section */
+.hero {
+    color: var(--red);
+    padding: 2.5rem 0;
+    text-align: center;
+}
+.hero-content {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.hero p {
+    font-size: 1.25rem;
+    opacity: 0.9;
+}
+/* Mission Section */
+.mission {
+    background: var(--red);
+    padding: 4rem 0;
+}
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    max-width: 64rem;
+    margin: 0 auto;
+}
+.mission-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+.icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--primary-color);
+}
+.icon-large {
+    width: 4rem;
+    height: 4rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+/* Technology Section */
+.technology {
+    background: var(--bg-light);
+    padding: 4rem 0;
+}
+.tech-grid {
+    max-width: 80rem;
+    margin: 0 auto;
+}
+.tech-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.tech-image img {
+    width: 100%;
+    height: 16rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+}
+.tech-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+.feature-card {
+    background: var(--red);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+}
+/* Team Section */
+.team {
+    background: var(--red);
+    padding: 4rem 0;
+}
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 72rem;
+    margin: 0 auto;
+}
+.team-member {
+    text-align: center;
+}
+.member-image {
+    width: 12rem;
+    height: 12rem;
+    margin: 0 auto 1rem;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.team-member h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+.team-member p {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+/* Timeline Section */
+.timeline {
+    background: var(--bg-light);
+    padding: 4rem 0;
+}
+.timeline-content {
+    max-width: 48rem;
+    margin: 0 auto;
+}
+.timeline-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+.timeline-marker {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--primary-color);
+    color: var(--red);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    position: relative;
+}
+.timeline-item:not(:last-child) .timeline-marker::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 2px;
+    height: calc(100% + 3rem);
+    background: var(--primary-color);
+    transform: translateX(-50%);
+}
+/* CTA Section */
+.cta {
+    background: var(--primary-color);
+    color: var(--red);
+    padding: 4rem 0;
+    text-align: center;
+}
+.cta p {
+    font-size: 1.25rem;
+    max-width: 32rem;
+    margin: 0 auto 2rem;
+}
+.cta-button {
+    background: var(--red);
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.cta-button:hover {
+    background-color: #f8fafc;
+}
+/* Footer */
+.footer {
+    background: var(--bg-light);
+    color: var(--red);
+    padding: 3rem 0;
+    text-align: center;
+}
+.footer-tagline {
+    color: #9ca3af;
+    margin-bottom: 1.5rem;
+}
+.footer-links {
+    margin-bottom: 1.5rem;
+}
+.footer-links a {
+    color: #6b7280;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: #9ca3af;
+}
+.footer-links span {
+    color: #6b7280;
+    margin: 0 0.5rem;
+}
+.footer-copyright {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    .tech-main {
+        grid-template-columns: 1fr;
+    }
+    .mission-grid {
+        grid-template-columns: 1fr;
+    }
+    .team-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+    .member-image {
+        width: 10rem;
+        height: 10rem;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .hero {
+        padding: 3rem 0;
+    }
+    .timeline-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .timeline-marker::after {
+        left: 1.25rem !important;
+    }
+}
+.btn-name-create {
+    background-color: var(--bg-light) !important;
+}
+/* Account Specific Styles */
+.account-section {
+    padding: 2rem 0;
+    min-height: calc(100vh - 400px);
+}
+.account-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 2rem;
+    background-color: var(--red)!important;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+/* Profile Section */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e5e7eb;
+}
+.profile-image {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.change-photo-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 50%;
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+.change-photo-btn:hover {
+    background-color: var(--red);
+}
+.profile-info {
+    flex: 1;
+}
+.profile-info h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+    text-align: left;
+}
+.profile-info .email {
+    color: var(--text-color);
+}
+.edit-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.edit-button:hover {
+    background-color: var(--red);
+}
+/* Edit Form */
+.edit-form {
+    margin-top: 2rem;
+}
+.edit-form.hidden {
+    display: none;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.save-button, .cancel-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    border: none !important; 
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.save-button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+.save-button:hover {
+    background-color: var(--red);
+}
+.cancel-button {
+    background-color: var(--text-color);
+    color: var(--text-color);
+}
+.cancel-button:hover {
+    background-color: var(--text-color);
+}
+/* Account Details */
+.account-details {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--text-color);
+}
+.account-details h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Задаємо 4 колонки */
+    gap: 1.5rem;
+}
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.detail-label {
+    color: var(--text-color);
+    font-size: 0.875rem;
+}
+.detail-value {
+    font-weight: 500;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    .profile-image {
+        margin: 0 auto;
+    }
+    .profile-info>h2 {
+        text-align: center;
+    }
+    .edit-button {
+        margin: 0 auto;
+    }
+}
+@media (max-width: 480px) {
+    .account-container {
+        padding: 1rem;
+    }
+    .form-actions {
+        flex-direction: column;
+    }
+    .save-button, .cancel-button {
+        width: 100%;
+    }
+}
+/* ... existing styles ... */
+/* Privacy Policy Specific Styles */
+.privacy-section {
+    background: var(--red);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+.privacy-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.section-header .icon {
+    width: 2rem;
+    height: 2rem;
+    color: var(--primary-color);
+}
+.privacy-content {
+    color: var(--text-color);
+}
+.privacy-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+.privacy-list {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+.privacy-list li {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+}
+.update-date {
+    color: var(--text-color);
+    margin-top: 1rem;
+}
+@media (max-width: 768px) {
+    .privacy-section {
+        padding: 1.5rem;
+    }
+}
+/* ... rest of existing styles ... */

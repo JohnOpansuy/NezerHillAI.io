@@ -1,0 +1,244 @@
+{% extends "shablon.html" %}
+{% block title %}NZ ШІ - Акаунт{% endblock %}
+
+{% block content %}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <div id="overlay" class="overlay"></div>
+    <div class="account-container-edit-settings settings_container3" id="settings_menu_container">
+        <button style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 18px; cursor: pointer;" data-action="cancel3" type="button" id="cancelButton">&times;</button>
+        <div class="settings_container1">
+            <p style="display: block; text-align: center; font-size: 20px; font-style: italic;">- Налаштування сайту -</p>
+        </div>
+        <div class="settings_container_main">
+            <div class="mig-container" >
+                <div class="settings_container0 settings_container2">
+                    <h4 style="margin-bottom: 10px;">- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="currentColor" class="bi bi-fonts" viewBox="0 1.5 16 16">
+                        <path d="M12.258 3h-8.51l-.083 2.46h.479c.26-1.544.758-1.783 2.693-1.845l.424-.013v7.827c0 .663-.144.82-1.3.923v.52h4.082v-.52c-1.162-.103-1.306-.26-1.306-.923V3.602l.431.013c1.934.062 2.434.301 2.693 1.846h.479z"/>
+                    </svg>Стиль шрифту
+                    </h4>
+                    <h4>Сімейство шрифтів</h4>
+                    <select onchange="sendData('fontFamily', this.value)">
+                        <option >{{ user_font }}</option>
+                        <option value="Mono">Mono</option>
+                        <option value="Times New Romane">Times New Romane</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                    <p class="little_text">P.S.: Може змінити стиль вигляду шрифту.</p>
+                    <p class="account-details"></p>
+                    <h4>Розмір шрифту</h4>
+                    <input placeholder="number of font-size" type="number" min = "10" max = "18" value="{{ user_font_size }}" oninput="sendData('fontSize', this.value)">
+                    <p class="little_text">P.S.: Може змінити розмір шрифту.</p>
+                </div>
+            </div>
+            <div class="mig-container">
+                <div class="settings_container0">
+                    <h4 style="margin-bottom: 10px;">- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clock-history" viewBox="0 0 16 16">
+                        <path d="M8.515 1.019A7 7 0 0 0 8 1V0a8 8 0 0 1 .589.022zm2.004.45a7 7 0 0 0-.985-.299l.219-.976q.576.129 1.126.342zm1.37.71a7 7 0 0 0-.439-.27l.493-.87a8 8 0 0 1 .979.654l-.615.789a7 7 0 0 0-.418-.302zm1.834 1.79a7 7 0 0 0-.653-.796l.724-.69q.406.429.747.91zm.744 1.352a7 7 0 0 0-.214-.468l.893-.45a8 8 0 0 1 .45 1.088l-.95.313a7 7 0 0 0-.179-.483m.53 2.507a7 7 0 0 0-.1-1.025l.985-.17q.1.58.116 1.17zm-.131 1.538q.05-.254.081-.51l.993.123a8 8 0 0 1-.23 1.155l-.964-.267q.069-.247.12-.501m-.952 2.379q.276-.436.486-.908l.914.405q-.24.54-.555 1.038zm-.964 1.205q.183-.183.35-.378l.758.653a8 8 0 0 1-.401.432z"/>
+                        <path d="M8 1a7 7 0 1 0 4.95 11.95l.707.707A8.001 8.001 0 1 1 8 0z"/>
+                        <path d="M7.5 3a.5.5 0 0 1 .5.5v5.21l3.248 1.856a.5.5 0 0 1-.496.868l-3.5-2A.5.5 0 0 1 7 9V3.5a.5.5 0 0 1 .5-.5"/>
+                        </svg> Час на домашній сторінці (в хвилинах)
+                    </h4>
+                    <select onchange="sendData('timer', this.value)">
+                        <option>{{ "%.2f"|format(user_time / 60000) }} хв</option> <!-- Перетворюємо мс у хвилини -->
+                        <option value="300000">5 хв</option>
+                        <option value="60000">1 хв</option>
+                        <option value="150000">2.5 хв</option>
+                        <option value="3600000">60 хв</option>
+                    </select>
+                    <p class="little_text">P.S.: Змінює час оновлення годиника на головній сторінці.</p>
+                </div>
+                <div class="settings_container0" style="margin-top: 40px;">
+                    <h4 style="margin-bottom: 10px;">- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-input-cursor-text" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M5 2a.5.5 0 0 1 .5-.5c.862 0 1.573.287 2.06.566.174.099.321.198.44.286.119-.088.266-.187.44-.286A4.17 4.17 0 0 1 10.5 1.5a.5.5 0 0 1 0 1c-.638 0-1.177.213-1.564.434a3.5 3.5 0 0 0-.436.294V7.5H9a.5.5 0 0 1 0 1h-.5v4.272c.1.08.248.187.436.294.387.221.926.434 1.564.434a.5.5 0 0 1 0 1 4.17 4.17 0 0 1-2.06-.566A5 5 0 0 1 8 13.65a5 5 0 0 1-.44.285 4.17 4.17 0 0 1-2.06.566.5.5 0 0 1 0-1c.638 0 1.177-.213 1.564-.434.188-.107.335-.214.436-.294V8.5H7a.5.5 0 0 1 0-1h.5V3.228a3.5 3.5 0 0 0-.436-.294A3.17 3.17 0 0 0 5.5 2.5.5.5 0 0 1 5 2"/>
+                        <path d="M10 5h4a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-4v1h4a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-4zM6 5V4H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v-1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z"/>
+                    </svg> Число рядків в рядку-надсилані
+                    </h4>
+                    <select onchange="sendData('rows_input', this.value)">
+                        <option>{{ user_rows }}</option> <!-- Перетворюємо мс у хвилини -->
+                        <option value="5">5</option>
+                        <option value="2">2</option>
+                        <option value="8">8</option>
+                        <option value="10">10</option>
+                    </select>
+                    <p class="little_text">P.S.: Змінює кількість рядків на всьому сайті.</p>
+                </div>        
+            </div>
+        </div>
+    </div>
+    <div class="wrapper">
+      <!-- Hero Section -->
+      <header class="hero">
+        <div class="container_">
+          <div class="hero-content">
+            <h1>Особистий кабінет</h1>
+            <p>Керуйте своїм профілем та налаштуваннями</p>
+          </div>
+        </div>
+      </header>
+      <!-- Account Section -->
+      <div class="account-section">
+        <div class="container_">
+          <div class="account-container">
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <div class="profile-header">
+                  <div class="profile-image">
+                    <img src="{{ image }}" alt="Profile photo" id="profileImage" />
+                    <button title="Вибрати фото профілю" class="change-photo-btn" onclick="document.getElementById('photoInput').click()">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"></path>
+                            <line x1="16" y1="5" x2="22" y2="5"></line>
+                            <line x1="19" y1="2" x2="19" y2="8"></line>
+                            <circle cx="9" cy="9" r="2"></circle>
+                            <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path>
+                        </svg>
+                    </button>
+                    <input type="file" id="photoInput" hidden accept="image/*" />
+                </div>
+                <div class="profile-info" id="profileInfo">
+                  <h2>{{ name }}</h2> <p class="email">{{ mail }}</p>
+                </div> 
+                <button title="Редагувати профіль" data-action="open" class="edit-button" id="editButton">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+                  </svg>Редагувати
+                </button>
+              </div>
+              <!-- Account Details -->
+              <div class="account-details" id="accountDetails">
+                <h4 style = "font-size: 20px; margin-bottom: 20px;">-інформація про акаунт</h4>
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <span class="detail-label">Дата регістрації</span>
+                        <span class="detail-value">{{ data }}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Останній вхід</span>
+                        <span class="detail-value">Today, {{ seen }}</span>
+                    </div>
+                    <div class="detail-item">
+                        <span class="detail-label">Статус акаунту</span>
+                        <span class="detail-value">{{ status }}</span>
+                    </div>
+                    <div class="detail-item">
+                      <span class="detail-label">Вийти з акаунту</span>
+                      <span><a title="Вийти з акаунту" href="/logout" class="detail-value">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-box-arrow-left" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0z"/>
+                              <path fill-rule="evenodd" d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708z"/>
+                          </svg>
+                          Вийти
+                      </a></span>
+                    </div>
+                </div>
+            </div>
+          </section>
+        </div>
+        <header class="hero">
+            <div class="container_">
+              <div class="hero-content">
+                <p>Керуйте своїми налаштуваннями та виглядом інтерфейсу</p>
+              </div>
+            </div>
+        </header>    
+        <div class="container_">
+          <div class="account-container">
+            <!-- Profile Section -->
+            <section class="profile-section">
+                <div style="display: block; margin-bottom: 10px; text-align: end;">
+                    <a title="Налаштування" class="setting_btn">
+                        <svg data-action="settiongs_main" style="padding: 2px;" xmlns="http://www.w3.org/2000/svg" width="20" height="24" fill="currentColor" class="bi bi-gear" viewBox="0 1 16 16">
+                            <path data-action="settiongs_main" d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492M5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0"/>
+                            <path data-action="settiongs_main" d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115z"/>
+                        </svg>
+                    </a>
+                </div>
+                <div class="settings_container1-1">
+                    <h4 style="margin-bottom: 10px;">- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="20" fill="currentColor" class="bi bi-translate" viewBox="0 1 16 16">
+                        <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z"/>
+                        <path d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31"/>
+                    </svg> Мова
+                    </h4>
+                    <select onchange="sendData('lenguage', this.value)">
+                        <option >{{ user_lenguage }}</option>
+                        <option value="American">American</option>
+                        <option value="Ukrainian">Ukrainian</option>
+                    </select>
+                    <p class="little_text">P.S.: Змінює мову на всьому сайті.</p>
+                </div>
+                <p class="account-details"></p>
+                <div class="settings_container1-1" style="margin-top: 10px;">
+                    <h4 style="margin-bottom: 10px;">- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="bi bi-palette" viewBox="0 1 16 16">
+                        <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                        <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+                    </svg> Тема сайту
+                    </h4>
+                    <select onchange="sendData('theme', this.value)">
+                        <option>{{ theme }}</option>
+                        <option value="Clasical">Clasical</option>
+                        <option value="Dark">Dark</option>
+                        <option value="White">White</option>
+                    </select>
+                    <p class="little_text">P.S.: Змінює тему на всьому сайті.</p>
+                </div>
+            </section>
+          </div>
+        </div>
+        <!-- Edit Form -->
+        <div class="account-container-edit" id = "edit_container">
+          <form method="POST">
+            {{ form.hidden_tag() }}
+            <!-- Кнопка з хрестиком у правому верхньому куті -->
+            <button style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 18px; cursor: pointer;" data-action="cancel" type="button" id="cancelButton">&times;</button>
+            
+            <!-- Поле "Name" -->
+            <div class="form-group">
+                {{ form.name.label }}
+                {{ form.name(class="form-control", value=name, required=true) }}
+            </div>
+        
+            <!-- Поле "Email" -->
+            <div class="form-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-control", value=mail, required=true) }}
+            </div>
+        
+            <!-- Поле "Current Password" -->
+            <div class="form-group">
+                {{ form.current_password.label }}
+                {{ form.current_password(class="form-control") }}
+            </div>
+        
+            <!-- Поле "New Password" -->
+            <div class="form-group">
+                {{ form.new_password.label }}
+                {{ form.new_password(class="form-control") }}
+            </div>
+        
+            <!-- Поле "Confirm New Password" -->
+            <div class="form-group">
+                {{ form.confirm_password.label }}
+                {{ form.confirm_password(class="form-control") }}
+            </div>
+            <!-- Кнопка "Save" -->
+            <div class="form-group">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container_">
+          <h2>ШІ рішення</h2>
+          <p class="footer-tagline">Будуйте майбутьнє з інтелектуальними технологіями</p>
+          <div class="footer-links">
+              <a href="/">Головна</a>
+              <span>|</span>
+              <a href="/privacy">Приватність та конфіденційність</a>
+          </div>
+          <p class="footer-copyright">© 2023 ШІ. Всі права захищенні.</p>
+      </div>
+    </footer>
+{% endblock %}

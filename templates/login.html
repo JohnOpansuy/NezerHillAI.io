@@ -1,0 +1,23 @@
+{% extends "shablon.html" %}
+{% block title %}NZ AI - Log in{% endblock %}
+
+{% block content %}
+    <div class = "container_4-2">
+        <div class = "container_5">
+            <form method = "POST" action = "{{ url_for("User_login") }}" onsubmit = "return validateForm()">
+                {{ form.hidden_tag() }}
+                <h4 style = "margin-bottom: 20px;">-For using our site you must <b>log in to sistem</b>.</h4>
+                <p class = "text_p_sing">Enter email:</p>
+                {{ form.email (size = 40) }}<br>
+                <p class = "text_p_sing">Enter password:</p>
+                {{ form.password(size=40) }}<br>
+                <div class = "btn_center">
+                    {{ form.submit(class="btn btn-info") }}
+                </div>
+            </form>
+            <div class = "container_5-2">
+                <p>Don't have an account? <a href = "/singin">Register</a>.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
